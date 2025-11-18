@@ -35,7 +35,7 @@ class ProductPage extends StatelessWidget {
           },
 
           child: ListView.builder(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 90), // FIXED
             itemCount: controller.products.length,
             itemBuilder: (context, index) {
               final produk = controller.products[index];
@@ -59,7 +59,7 @@ class ProductPage extends StatelessWidget {
                             produk.image,
                             width: 80,
                             height: 80,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.contain,
                           ),
                         ),
 
@@ -95,7 +95,8 @@ class ProductPage extends StatelessWidget {
 
                         WidgetBookmark(
                           initialValue: produk.isBookmarked,
-                          onChanged: (value) => controller.toggleBookmark(produk),
+                          onChanged: (value) =>
+                              controller.toggleBookmark(produk),
                         ),
                       ],
                     ),

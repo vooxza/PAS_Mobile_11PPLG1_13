@@ -67,7 +67,7 @@ class FavoritePage extends StatelessWidget {
                           produk.image,
                           width: 70,
                           height: 70,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
                       ),
 
