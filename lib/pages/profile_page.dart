@@ -21,9 +21,10 @@ class ProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 50,
+              radius: 80,
               backgroundImage: AssetImage('assets/profile.jpg'), 
             ),
+            const SizedBox(height: 20),
             Text(
               "Halo, adminlilix",
               style: const TextStyle(
@@ -38,7 +39,7 @@ class ProfilePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             CustomButton(
               text: "Log Out",
               textColor: Colors.red,

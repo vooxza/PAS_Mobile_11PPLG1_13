@@ -24,6 +24,16 @@ class _WidgetBookmarkState extends State<WidgetBookmark> {
     _bookmarked = widget.initialValue;
   }
 
+  @override
+  void didUpdateWidget(covariant WidgetBookmark oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.initialValue != oldWidget.initialValue) {
+      setState(() {
+        _bookmarked = widget.initialValue;
+      });
+    }
+  }
+
   Future<void> _toggle() async {
     final newValue = !_bookmarked;
     if (widget.onConfirm != null) {

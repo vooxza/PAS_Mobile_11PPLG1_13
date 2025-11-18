@@ -13,6 +13,7 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Favorite Page"),
+        centerTitle: true,
       ),
       body: Container(
         margin: EdgeInsets.all(10),
@@ -29,6 +30,7 @@ class FavoritePage extends StatelessWidget {
             itemBuilder: (context, index) {
               final produk = bookmarks[index];
               return Card(
+                key: ValueKey(produk.id),
                 child: ListTile(
                   leading: Image.network(
                     produk.image,

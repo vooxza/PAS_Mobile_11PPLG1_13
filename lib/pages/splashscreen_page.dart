@@ -11,11 +11,11 @@ class SplashscreenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text(
-          "Memeriksa login...",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18),
+        child:
+        CircularProgressIndicator(
+          color: Colors.purple,
         ),
+        
       ),
     );
   }

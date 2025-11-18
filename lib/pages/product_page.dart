@@ -33,9 +33,9 @@ class ProductPage extends StatelessWidget {
                 child: ListTile(
                   leading: Image.network(
                     produk.image,
-                    width: 50,
-                    height: 50,
-                    fit: BoxFit.contain,
+                    width: 80,
+                    height: 80,
+                    fit: BoxFit.scaleDown,
                   ),
                   title: Text(produk.title),
                   subtitle: Text("\$${produk.price}"),

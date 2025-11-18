@@ -12,27 +12,23 @@ class LoginApiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Login Page"),
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 16),
+            const SizedBox(height: 70),
             const Text(
-              "Welcome to our first app",
+              "Welcome Back!",
               style: TextStyle(
-                fontSize: 16,
-                color: Colors.blueGrey,
+                fontSize: 24,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 16),
-            Image.asset('assets/logo_flutter.png', width: 100, height: 100),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
+            Image.asset('assets/image.png', width: 250, height: 250),
+            const SizedBox(height: 10),
 
             TextField(
               controller: controller.username,
@@ -81,7 +77,7 @@ class LoginApiPage extends StatelessWidget {
                         height: 20,
                         width: 20,
                         child: CircularProgressIndicator(
-                          color: Colors.white,
+                          color: Colors.black,
                           strokeWidth: 2,
                         ),
                       )
@@ -94,6 +90,9 @@ class LoginApiPage extends StatelessWidget {
             TextButton(
               onPressed: () => Get.to(() => RegisterapiPage()),
               child: const Text("Belum punya akun? Register di sini"),
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.blue,
+            ),
             ),
           ],
         ),
