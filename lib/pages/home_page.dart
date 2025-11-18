@@ -22,15 +22,57 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
+        extendBody: true,
+
         body: pages[navController.currentIndex.value],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: navController.currentIndex.value,
-          onTap: (index) => navController.changeTab(index),
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: "Product"),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: "Favorite"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          ],
+        bottomNavigationBar: Container(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+          decoration: const BoxDecoration(
+            color: Colors.transparent,
+          ),
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(32),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.10),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: BottomNavigationBar(
+              currentIndex: navController.currentIndex.value,
+              onTap: (index) => navController.changeTab(index),
+
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: Colors.blueAccent,
+              unselectedItemColor: Colors.grey[500],
+              showUnselectedLabels: false,
+
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.shopping_bag_outlined),
+                  activeIcon: Icon(Icons.shopping_bag),
+                  label: "Product",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.star_border),
+                  activeIcon: Icon(Icons.star),
+                  label: "Favorite",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person_outline),
+                  activeIcon: Icon(Icons.person),
+                  label: "Profile",
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
